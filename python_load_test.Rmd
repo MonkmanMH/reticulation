@@ -1,0 +1,51 @@
+---
+title: "python_run_test"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## reticulate
+
+Package is loaded
+
+```{r}
+library(reticulate)
+
+use_python("/usr/bin/python3")
+
+py_discover_config()
+
+```
+
+> oh wait, this is 32bit python trying to run in a 64bit environment ...
+
+
+So far, so good
+
+```{python}
+
+import pandas
+flights = pandas.read_csv("flights.csv")
+flights = flights[flights['dest'] == "ORD]
+flights = flights[['carrier', 'dep_delay', 'arr_delay']]
+flights = flights.dropna()
+print(flights.head())
+
+
+```
+
+
+
+# {keras} 
+
+```{r}
+
+library(keras)
+
+install_keras()
+
+
+```

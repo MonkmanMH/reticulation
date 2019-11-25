@@ -1,0 +1,110 @@
+---
+title: "more python attempts"
+author: "Martin Monkman"
+date: "24/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Resources
+
+https://teachdatascience.com/reticulate/
+
+https://teachdatascience.com/pandas/
+
+https://blog.rstudio.com/2018/10/09/rstudio-1-2-preview-reticulated-python/
+
+
+
+
+## Package loads
+
+{reticulate}
+
+https://rstudio.github.io/reticulate/index.html
+
+```{r install_reticulat}
+# install.packages("reticulate")
+
+library(reticulate)
+use_virtualenv("r-reticulate")
+use_python(python = "/usr/bin/python", required = TRUE)
+
+py_config()
+
+```
+
+version is 2.7 
+
+use python3
+
+```{r py3}
+
+# use_python("/usr/bin/python3")
+#
+# py_discover_config()
+
+```
+
+
+
+
+
+
+{keras}: see https://tensorflow.rstudio.com/keras/reference/install_keras.html
+
+
+
+```{r install_keras}
+install.packages("keras", dependencies = TRUE)
+install.packages("tensorflow", dependencies = TRUE)
+
+library(keras)
+#
+library(tensorflow)
+keras::install_keras()
+
+
+```
+
+nope
+
+what about the rstudio version?
+
+```{r install_keras}
+
+devtools::install_github("rstudio/keras")
+
+library(keras)
+library(tensorflow)
+keras::install_keras()
+
+
+```
+
+```{python}
+
+pip3 show tensorflow
+
+```
+
+```{python}
+import pandas
+flights = pandas.read_csv("flights.csv")
+flights = flights[flights['dest'] == "ORD]
+flights = flights[['carrier', 'dep_delay', 'arr_delay']]
+flights = flights.dropna()
+print(flights.head())
+```
+
+```{r}
+
+os <- import("os")
+os$listdir(".")
+
+```
+
+

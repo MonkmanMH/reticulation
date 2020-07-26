@@ -7,6 +7,8 @@ code to use the reticulate package in RStudio.Cloud
 
 * [Calling Python from R](https://rstudio.github.io/reticulate/articles/calling_python.html)
 
+* Keith McNulty, 2020,01-22, [Why choose between R and Python when you can choose both?](https://towardsdatascience.com/why-choose-between-r-and-python-when-you-can-choose-both-4949cccb90a1)
+
 Teach Data Science
 
 * [reticulate: running Python within RStudio](https://teachdatascience.com/reticulate/)
